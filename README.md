@@ -31,7 +31,7 @@ Installation of this application would be on the terminal using localhost with t
 
 ## Links
 
-### [Walkthrough Video of the Application](Assets/SQL-Challenge-Walkthrough%20Video.webm)
+### [Walkthrough Video of the Application](Assets/SQL-Challenge-Walkthrough-Video.webm)
 
 ### [The URL GitHub Repository of the Application](https://github.com/Tesfa8186/SQL-Challenge)
 
