@@ -46,7 +46,7 @@ const mainMenu = () => {
             if (answer.action === "Add a Role") {
                 addRole()
             }
-            if (answer.action === "Add a Employee") {
+            if (answer.action === "Add an Employee") {
                 addEmployee()
             }
             if (answer.action === "Update an Employee Role") {
@@ -138,18 +138,18 @@ const addRole = () => {
         })
     })
 }
+// ADD EMPLOYEE
 const addEmployee = () => {
-    db.query("SELECT * from department;", function(err, results) {
         inquirer.prompt([
             {
                 type: "input",
                 name: "first_name",
-                message: "What is the first of the new employee?"
+                message: "What is the first name of the new employee?"
             },
             {
                 type: "input",
                 name: "last_name",
-                message: "What is the last of the new employee?"
+                message: "What is the last name of the new employee?"
             },
             {
                 type: "input",
@@ -160,14 +160,9 @@ const addEmployee = () => {
                 type: "list",
                 name: "manager_id",
                 message: "What is the manager id of the new employee?",
-                choices: results.map(dept => {
-                    return {
-                        name: dept.name,
-                        value: dept.id
-                    }
-                })
-            }
-        ])
+               
+            }])
+        
         .then(answers => {
             db.query(
                 `INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ("${answers.first_name}", "${answers.last_name}", "${answers.role_id}", "${answers.manager_id}" )`,
@@ -177,8 +172,7 @@ const addEmployee = () => {
                 }
             )
         })
-    })
-}
+    }
 
 
 mainMenu();
